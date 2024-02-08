@@ -1,0 +1,41 @@
+<!-- 
+<div style="width: 20%;">
+
+</div>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <div class="list-group">
+            <a routerLink="summaryview" routerLinkActive="active" class="list-group-item list-group-item-action">
+              Summary View
+            </a>
+            <a routerLink="ataoverview" routerLinkActive="active" class="list-group-item list-group-item-action">Data Overview</a>
+            <a href="querryview" class="list-group-item list-group-item-action">Querry view</a>
+            <a href="" class="list-group-item list-group-item-action">Some Other Tab</a>
+          </div>    </div>
+    <div class="grid-item">
+        <router-outlet></router-outlet>
+    </div>
+  </div> -->
+<!-- <nav class="nav nav-pills">
+    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link" href="#">Longer nav link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </nav> -->
+
+<div class="main" *ngIf="data$ | async">
+    <div style="display: flex; justify-content: flex-start; margin-bottom: 20px;">
+        <nav class="nav nav-pills  custom-nav">
+            <a class="nav-link" routerLink="summaryview" routerLinkActive="active">Summary View</a>
+            <a class="nav-link" routerLink="dataoverview" routerLinkActive="active">Data OverView</a>
+            <!-- <a class="nav-link" routerLink="summaryviews" routerLinkActive="active">Querry View</a> -->
+        </nav>
+    </div> 
+    <div style="width: 100%; overflow: hidden;">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="main" *ngIf="!(data$ | async)">
+  Please upload files in the <a href="http://localhost:4200/import">import page </a> 
+</div>

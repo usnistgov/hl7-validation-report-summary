@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Adds margin between columns and rows */
+}
+
+
+
+  
+  
+
+ 

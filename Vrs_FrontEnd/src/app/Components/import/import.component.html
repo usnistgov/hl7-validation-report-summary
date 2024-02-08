@@ -1,0 +1,14 @@
+<div style="padding-top: 50px; padding-right: 50px; padding-left: 50px; height: 100vh; background-color: white;">
+    <div class="card flex justify-content-center">
+        <p-toast (onClose)="onToastClose()"></p-toast>
+        <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept=".xml" >
+           <ng-template pTemplate="toolbar">
+                <div class="py-3">Upload XML files to be processed</div>
+            </ng-template>
+             <ng-template  pTemplate="file">
+            </ng-template> 
+            <ng-template pTemplate="content" let-files>
+                <div *ngIf="files.length">There are {{files.length}} files chosen. Click Upload to upload and process the files</div>
+            </ng-template>
+        </p-fileUpload>
+    </div>

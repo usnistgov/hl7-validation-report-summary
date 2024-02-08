@@ -1,0 +1,27 @@
+.hover-effect {
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-container {
+    padding: 10px;
+  }
+  
+  .multiselect-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+  }
+  
+  .multiselect-item {
+    flex: 1;
+    margin-right: 20px; /* Adjust the spacing between multiselect items */
+  }
+  .multiselect-item label {
+    font-weight: bold;
+  }
+  
+  .multiselect-item p-multiSelect {
+    padding: 10px; /* Adjust the padding as needed */
+  }

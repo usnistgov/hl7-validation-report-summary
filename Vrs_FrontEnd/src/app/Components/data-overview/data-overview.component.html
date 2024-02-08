@@ -1,0 +1,64 @@
+
+  
+<div class="multiselect-container">
+  <div class="multiselect-item">
+    <label for="detectionTypes">Detection Types:</label>
+    <p-multiSelect id="detectionTypes"  [options]="detectionsType" [(ngModel)]="selectedDetectionTypes" (ngModelChange)="onToggleChangeDetection($event)" optionLabel="name"></p-multiSelect>
+  </div>
+  <div class="multiselect-item">
+    <label for="selectedColumns">Selected Columns:</label>
+    <p-multiSelect [options]="columns" [(ngModel)]="selectedColumns" (ngModelChange)="onToggleChangeColumns($event)" optionLabel="value">
+      <ng-template pTemplate="selectedItems" let-items>
+        {{items?.length}} elements selected
+      </ng-template>
+    </p-multiSelect> 
+   </div>
+</div>
+<!-- <div>
+  <p-multiSelect [options]="columns" [(ngModel)]="selectedColumns" (ngModelChange)="onToggleChangeColumns($event)" optionLabel="name" ></p-multiSelect>
+</div> -->
+<div class="card" style="width: 100%;">
+
+    <p-table [value]="data" [columns]="selectedColumns" [scrollable]="true" scrollHeight="800px">
+      <ng-template pTemplate="header">
+        <tr>
+            <ng-container *ngFor="let column of selectedColumns">
+                <th *ngIf="column.key === 'location'" pFrozenColumn [pSortableColumn]="column.key" style="min-width: 200px;">
+                    {{column.value}}
+                    <p-sortIcon [field]="column.key"></p-sortIcon>
+                  </th>
+                  <th *ngIf="column.key !== 'location'" [pSortableColumn]="column.key" style="min-width:100px">
+                    {{column.value}}
+                    <p-sortIcon [field]="column.key"></p-sortIcon>
+                  </th>
+            </ng-container>
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+            <ng-container *ngFor="let column of selectedColumns">
+                <td *ngIf="column.key === 'location'" pFrozenColumn>{{ rowData[column.key] }}</td>
+
+                <td *ngIf="column.key !== 'location' && column.key !== 'total'"
+                style="text-align: center; cursor: pointer;"
+                (click)="openDialog(rowData[column.key])"
+                [class.hover-effect]="isHovered(rowData[column.key])"
+                (mouseenter)="onCellHover(rowData[column.key])"
+                (mouseleave)="onCellLeave()">
+                {{ rowData[column.key].length }}
+            </td>
+
+            <td *ngIf="column.key === 'total'"
+            style="text-align: center; cursor: pointer;"
+            (click)="openDialog(rowData[column.key])"
+            [class.hover-effect]="isHovered(rowData[column.key])"
+            (mouseenter)="onCellHover(rowData[column.key])"
+            (mouseleave)="onCellLeave()">
+            {{ rowData[column.key] }}
+        </td>
+            </ng-container>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>

@@ -1,0 +1,78 @@
+:host {
+    display: contents;
+}
+
+.general {
+    display: grid;
+    grid-template-rows: max-content auto;
+    gap: 15px;
+}
+
+.general-info {
+    padding: 10px;
+  }
+
+  .info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .info-box {
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  .card.classifications {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .detections-by-classification h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .classification-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .classification-table th,
+  .classification-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  .classification-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .classification-table td.error {
+    background-color: red;
+    color: white;
+  }
+  
+  .classification-table td.warning {
+    background-color: yellow;
+  }
+  
+  .classification-table td.informational {
+    background-color: lightblue;
+  }
+  
+  .classification-table td.alert {
+    background-color: lightyellow;
+  }
+
+  .classification-table td.affirmative {
+    background-color: lightgreen;
+  }

@@ -1,0 +1,30 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    column-gap: 20px; /* Adds margin between the columns */
+  }
+  
+  .grid-item {
+    /* Add additional styling for the grid items here */
+  }
+
+  .custom-nav .nav-link {
+    margin: 5px; /* Adds space between the navigation links */
+    padding: 10px 20px; /* Adjust padding for more comfortable spacing */
+    border-radius: 5px; /* Adds rounded corners to the links */
+    color: #333; /* Sets the text color */
+  }
+
+  .custom-nav .nav-link.active {
+    background-color: #007bff; /* Sets a different background color for the active link */
+    color: #fff; /* Sets the text color for the active link */
+  }
+
+
+.main {
+    padding: 20px;
+    display: grid;
+    height: 100%;
+    grid-template-rows: [tabs] min-content [container] auto;
+}

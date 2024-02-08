@@ -1,0 +1,41 @@
+<div *ngIf="generalInfo" class="general">
+    <div class="card counts">
+        <div class="general-info">
+            <div class="info-line">
+              <span class="info-label">Messages:</span>
+              <div class="info-box">{{ generalInfo.messagesNumber }}</div>
+            </div>
+            <div class="info-line">
+              <span class="info-label">Profile:</span>
+              <div class="info-box">{{ generalInfo.profileName }}</div>
+            </div>
+            <!-- <div class="info-line">
+              <span class="info-label">Messages With No Errors:</span>
+              <div class="info-box">{{ generalInfo.passedMessagesNumber }}</div>
+            </div>
+            <div class="info-line">
+              <span class="info-label">Messages With Errors:</span>
+              <div class="info-box">{{ generalInfo.failedMessagesNumber }}</div>
+            </div> -->
+          </div>
+    </div>
+    <div class="card classifications">
+        <div class="detections-by-classification">
+          <h2>Detections by Classification</h2>
+          <table class="classification-table" >
+            <thead>
+              <tr>
+                <th>Error Type</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let error of errorCounts | keyvalue">
+                <td>{{ error.key }}</td>
+                <td [ngClass]="error.key">{{ error.value }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
